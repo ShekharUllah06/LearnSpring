@@ -20,7 +20,13 @@ public class SimpleProductManager implements ProductManager {
 	 */
 	@Override
 	public void increasePrice(int percentage) {
-		throw new UnsupportedOperationException();
+		if (products != null) {
+            for (Product product : products) {
+                double newPrice = product.getPrice().doubleValue() * 
+                                    (100 + percentage)/100;
+                product.setPrice(newPrice);
+            }
+        }
 
 	}
 
