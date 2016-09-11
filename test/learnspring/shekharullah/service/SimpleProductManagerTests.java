@@ -24,7 +24,9 @@ public class SimpleProductManagerTests extends TestCase {
     private static String CHAIR_DESCRIPTION = "Chair";
     
     private static String TABLE_DESCRIPTION = "Table";
-    private static Double TABLE_PRICE = new Double(150.10);         
+    private static Double TABLE_PRICE = new Double(150.10);  
+    
+    private static int POSITIVE_PRICE_INCREASE = 10;
         
     protected void setUp() throws Exception {
         productManager = new SimpleProductManager();
@@ -62,4 +64,38 @@ public class SimpleProductManagerTests extends TestCase {
         assertEquals(TABLE_DESCRIPTION, product.getDescription());
         assertEquals(TABLE_PRICE, product.getPrice());      
     }   
+    
+    public void testIncreasePriceWithNullListOfProducts() {
+        try {
+            productManager = new SimpleProductManager();
+            productManager.increasePrice(POSITIVE_PRICE_INCREASE);
+        }
+        catch(NullPointerException ex) {
+            fail("Products list is null.");
+        }
+    }
+    
+    public void testIncreasePriceWithEmptyListOfProducts() {
+        try {
+            productManager = new SimpleProductManager();
+            productManager.setProducts(new ArrayList<Product>());
+            productManager.increasePrice(POSITIVE_PRICE_INCREASE);
+        }
+        catch(Exception ex) {
+            fail("Products list is empty.");
+        }           
+    }
+    
+    public void testIncreasePriceWithPositivePercentage() {
+        productManager.increasePrice(POSITIVE_PRICE_INCREASE);
+        double expectedChairPriceWithIncrease = 22.55;
+        double expectedTablePriceWithIncrease = 165.11;
+        
+        List<Product> products = productManager.getProducts();      
+        Product product = products.get(0);
+        assertEquals(expectedChairPriceWithIncrease, product.getPrice());
+        
+        product = products.get(1);      
+        assertEquals(expectedTablePriceWithIncrease, product.getPrice());       
+    }
 }
