@@ -1,7 +1,7 @@
 /**
  * 
  */
-package learninspring.shekharullah.service;
+package learnspring.shekharullah.service;
 
 import java.util.List;
 
