@@ -9,7 +9,7 @@ import learnspring.shekharullah.domain.Product;
 
 /**
  * @author Shekhar Ullah
- *
+ * @Date 11th September,2016
  */
 public class SimpleProductManager implements ProductManager {
 
