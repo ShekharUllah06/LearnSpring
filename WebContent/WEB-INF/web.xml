@@ -9,6 +9,10 @@
           <servlet>
     <servlet-name>LearnSpring</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/learnspring-servlet.xml</param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -19,7 +23,7 @@
 
   <welcome-file-list>
     <welcome-file>
-      jsp/index.jsp
+      index.jsp
     </welcome-file>
   </welcome-file-list>
 

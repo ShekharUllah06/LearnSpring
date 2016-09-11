@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/Shekhar Ullah/workspace/CacheTest/WebContent/WEB-INF/lib/javax.servlet-api-3.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="lib" path="C:/Users/Shekhar Ullah/workspace/SpringSecurityXMLBasedAuth/WebContent/WEB-INF/lib/spring-web-3.0.7.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
