@@ -12,7 +12,7 @@ import learnspring.shekharullah.domain.Product;
  * @Date 11th September,2016
  */
 public class SimpleProductManager implements ProductManager {
-
+	 private List<Product> products;
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -31,11 +31,11 @@ public class SimpleProductManager implements ProductManager {
 	 */
 	@Override
 	public List<Product> getProducts() {
-		throw new UnsupportedOperationException();
+		return products;
 	}
 
 	public void setProducts(List<Product> products) {
-		throw new UnsupportedOperationException();
+		this.products = products;
 	}
 
 }
