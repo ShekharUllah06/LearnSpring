@@ -12,9 +12,13 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-public class HelloController implements Controller {
+import learnspring.shekharullah.service.ProductManager;
+
+public class InventoryController implements Controller {
 
 	protected final Log logger = LogFactory.getLog(getClass());
+	
+	private ProductManager productManager;
 
     @Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
