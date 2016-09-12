@@ -39,6 +39,18 @@
 	<bean name="/hello.htm" class="learnspring.shekharullah.web.InventoryController">
 		<property name="productManager" ref="productManager" />
 	</bean>
+	
+	<bean name="/priceincrease.htm" class="learnspring.shekharullah.web.PriceIncreaseFormController">
+        <property name="sessionForm" value="true"/>
+        <property name="commandName" value="priceIncrease"/>
+        <property name="commandClass" value="learnspring.shekharullah.service.PriceIncrease"/>
+        <property name="validator">
+            <bean class="learnspring.shekharullah.service.PriceIncreaseValidator"/>
+        </property>
+        <property name="formView" value="priceincrease"/>
+        <property name="successView" value="hello.htm"/>
+        <property name="productManager" ref="productManager"/>
+    </bean>
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
